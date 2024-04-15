@@ -1,18 +1,28 @@
 <div class="bg-slate-900">
-    <nav class="w-full h-12 bg-indigo-200 flex justify-between px-4 md:px-4">
-        <div class="mt-1">
-            <img class="rounded-full h-10" src="assets/logo.png" alt="" srcset="">
+    <nav [class]="(!showMobileMenu ? 'h-12 ' :'h-36 ') + ' w-full md:h-12 bg-indigo-200 px-4 md:px-4'">
+        <div class="justify-between flex">
+            <div class="mt-1">
+                <img class="rounded-full h-10 cursor-pointer" src="assets/logo.png" alt="" srcset="">
+            </div>
+            <div class="mt-3">
+                <ul class="md:flex font-semibold hidden">
+                    <li class="px-2 cursor-pointer hover:bg-indigo-900 hover:text-white rounded-md">Home</li>
+                    <li class="px-2 cursor-pointer hover:bg-indigo-900 hover:text-white rounded-md">About us</li>
+                    <li class="px-2 cursor-pointer hover:bg-indigo-900 hover:text-white rounded-md">Contact us</li>
+                </ul>
+            </div>
+            <p class="md:bg-indigo-900 text-white rounded-md font-bold m-2 p-1 pt-1 cursor-pointer hidden sm:block">
+                Login/signup
+            </p>
+            <div class="md:hidden text-4xl">
+                <i *ngIf="showMobileMenu" class="fa fa-times text-red-500 cursor-pointer" (click)="showMenu(false)"></i>
+                <a *ngIf="!showMobileMenu" class="cursor-pointer" (click)="showMenu(true)">&#8801;</a>
+            </div>
         </div>
-        <div class="mt-3">
-            <ul class="md:flex font-semibold hidden">
-                <li class="px-2 cursor-pointer">Home</li>
-                <li class="px-2 cursor-pointer">About us</li>
-                <li class="px-2 cursor-pointer">Contact us</li>
-            </ul>
-        </div>
-        <p class="md:bg-indigo-900 text-white rounded-md font-bold m-2 p-1 pt-1 hidden sm:inline-block">Login/signup</p>
-        <div class="md:hidden text-4xl">
-            <a class="cursor-pointer">&#8801;</a>
+        <div class="md:hidden" [hidden]="showMobileMenu ? false : true">
+            <p class="px-2 py-1 cursor-pointer hover:bg-indigo-900 hover:text-white rounded-md">Home</p>
+            <p class="px-2 py-1 cursor-pointer hover:bg-indigo-900 hover:text-white rounded-md">About us</p>
+            <p class="px-2 py-1 cursor-pointer hover:bg-indigo-900 hover:text-white rounded-md">Contact us</p>
         </div>
     </nav>
     <div class="w-full h-auto">
@@ -28,22 +38,22 @@
                 </div>
             </div>
         </div>
-        <div class="flex justify-between py-4 px-[10%] mt-2">
-            <div class="md:w-[33%] text-center">
+        <div class="flex flex-wrap justify-between py-4 px-[10%] mt-2">
+            <div class="md:w-[33%] pb-6 w-full text-center">
                 <div class="flex justify-center pb-1">
                     <img class="h-16 w-16 rounded-full" src="assets/course_avatar.avif" alt="" srcset="">
                 </div>
                 <p class="text-white">600+</p>
                 <p class="text-gray-400 font-semibold">Different Courses</p>
             </div>
-            <div class="md:w-[33%] text-center">
+            <div class="md:w-[33%] w-full pb-6 text-center">
                 <div class="flex justify-center pb-1">
                     <img class="h-16 w-16 rounded-full" src="assets/degree_avatar.png" alt="" srcset="">
                 </div>
                 <p class="text-white">700,000+</p>
                 <p class="text-gray-400 font-semibold">Student Enrolled</p>
             </div>
-            <div class="md:w-[33%] text-center">
+            <div class="md:w-[33%] w-full pb-6 text-center">
                 <div class="flex justify-center pb-1">
                     <img class="h-16 w-16 rounded-full" src="assets/transtion_avatar.webp" alt="" srcset="">
                 </div>
@@ -61,16 +71,16 @@
                 </div>
             </div>
         </div>
-        <div class="flex justify-between py-4 px-[4%] mt-2">
-            <div class="md:w-[25%] text-center p-1 rounded-lg border border-white pt-4 mr-4">
+        <div class="flex flex-wrap justify-between py-4 px-[4%] mt-2">
+            <div class="md:w-[20%]  text-center p-1 rounded-lg border border-white pt-4">
                 <div class="flex justify-center pb-1">
                     <img class="h-16 w-16 rounded-full" src="assets/skill_avatar.jpeg" alt="" srcset="">
                 </div>
                 <p class="text-white font-bold">PW Skills lab</p>
                 <p class="text-gray-400 font-semibold text-wrap text-block text-sm">Lorem ipsum dolor sit amet
-                    consectetur, adipisicing elit. Iusto!</p>
+                    consectetur, adipisicing elit. Voluptatum voluptatibus iusto impedit.</p>
             </div>
-            <div class="md:w-[25%] text-center p-1 mr-4">
+            <div class="md:w-[20%] text-center p-1">
                 <div class="flex justify-center pb-1 mt-4">
                     <img class="h-12 w-12 rounded-full" src="assets/job_avatar.jpeg" alt="" srcset="">
                 </div>
@@ -78,7 +88,7 @@
                 <p class="text-gray-400 font-semibold text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit.
                     Pariatur, nam! </p>
             </div>
-            <div class="md:w-[25%] text-center p-1 mr-4">
+            <div class="md:w-[20%] text-center p-1">
                 <div class="flex justify-center pb-1 mt-4">
                     <img class="h-12 w-12 rounded-full" src="assets/projects_avatar.png" alt="" srcset="">
                 </div>
@@ -86,7 +96,7 @@
                 <p class="text-gray-400 font-semibold text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit.
                     Iure nesciunt minus eligendi et odio placeat.</p>
             </div>
-            <div class="md:w-[25%] text-center p-1 mr-4">
+            <div class="md:w-[20%] text-center p-1">
                 <div class="flex justify-center pb-1 mt-4">
                     <img class="h-12 w-12 rounded-full" src="assets/companies_avatar.jpeg" alt="" srcset="">
                 </div>
@@ -94,7 +104,7 @@
                 <p class="text-gray-400 font-semibold text-sm">Lorem ipsum, dolor sit amet consectetur adipisicing elit.
                     Neque amet natus fugiat!</p>
             </div>
-            <div class="md:w-[25%] text-center p-1 mr-4">
+            <div class="md:w-[20%] text-center p-1">
                 <div class="flex justify-center pb-1">
                     <img class="size-16 rounded-[100%]" src="assets/cerificates.jpeg" alt="" srcset="">
                 </div>
@@ -106,53 +116,45 @@
     </div>
     <div></div>
 </div>
-<footer class="flex px-4 bg-gray-900 text-white pt-10 justify-between pb-2">
-    <div>
+<footer class="flex flex-wrap px-4 bg-gray-900 text-white pt-10 justify-between pb-2">
+    <div class="w-[50%] md:w-[25%] ">
         <ul>
             <li class="flex">
                 <img class="w-7 h-7" src="assets/logo.png" alt="" srcset="">
                 <p class="text-white font-bold pl-2 pt-2">Skill</p>
             </li>
         </ul>
-        <div class="flex justify-center text-center mt-2">
-            <div class="w-32 border-b-2 border-yellow-400 rounded-md"></div>
-        </div>
-        <div>Contact US</div>
-        <div>skill&#64;gmail.com</div>
+        <div class="w-24 md:w-32 border-b-2 border-yellow-400 rounded-md  my-2"></div>
+        <div class="md:text-base text-sm">Contact US</div>
+        <div class="md:text-base text-sm">skill&#64;gmail.com</div>
     </div>
-    <div>
-        <p class="font-bold text-white">PW Skills</p>
-        <div class="flex justify-center text-center my-2">
-            <div class="w-32 border-b-2 border-yellow-400 rounded-md"></div>
-        </div>
+    <div class="w-[50%] md:w-[25%] ">
+        <p class="font-bold text-white mt-2">PW Skills</p>
+        <div class="w-24 md:w-32 border-b-2 border-yellow-400 rounded-md  my-2"></div>
         <ul>
-            <li>About US</li>
-            <li>FAQs</li>
-            <li>Privacy Policy</li>
+            <li class="md:text-base text-sm">About US</li>
+            <li class="md:text-base text-sm">FAQs</li>
+            <li class="md:text-base text-sm">Privacy Policy</li>
         </ul>
     </div>
-    <div>
-        <p class="font-bold text-white">products</p>
-        <div class="flex justify-center text-center my-2">
-            <div class="w-32 border-b-2 border-yellow-400 rounded-md"></div>
-        </div>
+    <div class="w-[50%] md:w-[25%]">
+        <p class="font-bold text-white mt-2">products</p>
+        <div class="w-24 md:w-32 border-b-2 border-yellow-400 rounded-md  my-2"></div>
         <ul>
-            <li>PW Skills Lab</li>
-            <li>Job Portal</li>
-            <li>Experiance Portal</li>
-            <li>Become an affiliate</li>
-            <li>Hall of fame</li>
+            <li class="md:text-base text-sm">PW Skills Lab</li>
+            <li class="md:text-base text-sm">Job Portal</li>
+            <li class="md:text-base text-sm">Experiance Portal</li>
+            <li class="md:text-base text-sm">Become an affiliate</li>
+            <li class="md:text-base text-sm">Hall of fame</li>
         </ul>
     </div>
-    <div>
-        <p class="font-semibold text-white text-sm">Links</p>
-        <div class="flex justify-center text-center my-2">
-            <div class="w-32 border-b-2 border-yellow-400 rounded-md"></div>
-        </div>
+    <div class="w-[50%] md:w-[25%]">
+        <p class="font-bold text-white mt-2">Links</p>
+        <div class="w-24 md:w-32 border-b-2 border-yellow-400 rounded-md  my-2"></div>
         <ul>
-            <li>Discord Channel</li>
-            <li>PW Youtube</li>
-            <li>Careers</li>
+            <li class="md:text-base text-sm">Discord Channel</li>
+            <li class="md:text-base text-sm">PW Youtube</li>
+            <li class="md:text-base text-sm">Careers</li>
         </ul>
     </div>
 </footer>
