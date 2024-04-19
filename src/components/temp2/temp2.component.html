@@ -4,7 +4,7 @@
             <div>
                 <img class="h-8 w-8 cursor-pointer" src="assets/logo.png" alt="" srcset="">
             </div>
-            <div>
+            <div class="hidden sm:inline-block">
                 <ul class="flex">
                     <li class="text-white cursor-pointer p-2 px-3 text-sm hover:text-[#cccccc]">Home </li>
                     <li class="text-white cursor-pointer p-2 px-3 text-sm hover:text-[#cccccc]">Products </li>
@@ -13,10 +13,22 @@
                     <li class="text-white cursor-pointer p-2 px-3 text-sm hover:text-[#cccccc]">Contacts </li>
                 </ul>
             </div>
-
-            <div class="text-white text-3xl cursor-pointer">
-                &#8801;
+            <div class="hidden sm:inline-block text-3xl text-white">
+                <a class="cursor-pointer">&#8801;</a>
             </div>
+            <div class="md:hidden text-3xl">
+                <i *ngIf="showMobileMenu" class="fa fa-times text-red-500 cursor-pointer" (click)="showMenu(false)"></i>
+                <a *ngIf="!showMobileMenu" class="cursor-pointer text-white" (click)="showMenu(true)">&#8801;</a>
+            </div>
+        </div>
+        <div class="md:hidden" [hidden]="showMobileMenu ? false : true">
+            <ul>
+                <li class="text-white cursor-pointer p-2 px-3 text-sm hover:bg-[#cccccc] hover:rounded-lg hover:text-black">Home </li>
+                <li class="text-white cursor-pointer p-2 px-3 text-sm hover:bg-[#cccccc] hover:rounded-lg hover:text-black">Products </li>
+                <li class="text-white cursor-pointer p-2 px-3 text-sm hover:bg-[#cccccc] hover:rounded-lg hover:text-black">About Us </li>
+                <li class="text-white cursor-pointer p-2 px-3 text-sm hover:bg-[#cccccc] hover:rounded-lg hover:text-black">Price </li>
+                <li class="text-white cursor-pointer p-2 px-3 text-sm hover:bg-[#cccccc] hover:rounded-lg hover:text-black">Contacts </li>
+            </ul>
         </div>
     </nav>
     <div class="bg-cover pt-[23rem] px-6 pb-16" style="background-image: url('assets/temp2/home.jpg');">
@@ -39,14 +51,14 @@
 </div>
 <div class="bg-black">
     <div class="flex flex-wrap py-[5rem] px-[51px]">
-        <div class="w-[50%] px-[25px]">
-            <div class="h-56 grid place-content-center text-2xl text-white" style="background-image: url('assets/temp2/airpods.jpg');
+        <div class="w-full md:w-[50%] md:px-[25px] pb-[25px]">
+            <div class="h-56 grid place-content-center text-2xl text-white hover:z-50" style="background-image: url('assets/temp2/airpods.jpg');
             background-size: cover;">
                 Buds
             </div>
 
         </div>
-        <div class="w-[50%] px-[25px]">
+        <div class="w-full md:w-[50%] md:px-[25px] pb-[25px]">
             <div class="h-56  grid place-content-center text-2xl text-white"
                 style="background-image: url('assets/temp2/smartphones.jpg'); background-size: cover;">
                 Smartphones
@@ -55,18 +67,18 @@
     </div>
     <div class="py-[5rem] flex justify-center px-[5rem]">
         <div class="flex flex-wrap justify-between max-w-[1140px]">
-            <div class="w-[33%]">
+            <div class="md:w-[33%] pb-[25px]">
                 <i class="fas fa-desktop text-8xl text-[#616161] mb-[18px]"></i>
                 <p class="text-2xl mb-[18px] text-white">Technologies</p>
                 <p class="text-md text-white mt-2 text-wrap">Id in laborum molestias quos rem repellat sint vero.</p>
             </div>
-            <div class="w-[33%]">
+            <div class="md:w-[33%] pb-[25px]">
                 <i class="fas fa-link text-8xl text-[#616161] mb-[18px]"></i>
                 <p class="text-2xl mb-[18px] text-white">Future</p>
                 <p class="text-md text-white mt-2">Itaque pariatur quae quibusdam reprehenderit vero. Dolor eveniet id.
                 </p>
             </div>
-            <div class="w-[33%]">
+            <div class="md:w-[33%] pb-[25px]">
                 <i class="fas fa-cogs text-8xl text-[#616161] mb-[18px]"></i>
                 <p class="text-2xl mb-[18px] text-white">Gadgets</p>
                 <p class="text-md text-white mt-2">Culpa distinctio ex fuga libero minima pariatur porro quas qui.</p>
@@ -75,9 +87,9 @@
     </div>
     <div class="py-[5rem]">
         <div class="flex flex-wrap">
-            <div class="w-[25%] px-[16px]">
+            <div class="md:w-[25%] px-[16px] pb-[25px]">
                 <div class="h-[510px] text-2xl text-white flex items-end px-[28px] py-[24px]"
-                    style="background-image: url('assets/temp2/home.jpg');">
+                    style="background-image: url('assets/temp2/card_1.jpg'); background-size: cover;">
                     <div class="flex justify-center ">
                         <div>
                             <div class="text-lg border rounded-md w-auto border-[#ffffff] px-[10px]">
@@ -92,9 +104,9 @@
                     </div>
                 </div>
             </div>
-            <div class="w-[25%] px-[16px]">
+            <div class="md:w-[25%] px-[16px] pb-[25px]">
                 <div class="h-[510px] text-2xl text-white flex items-end px-[28px] py-[24px]"
-                    style="background-image: url('assets/temp2/home.jpg');">
+                    style="background-image: url('assets/temp2/card_2.jpg'); background-size: cover;">
                     <div class="flex justify-center ">
                         <div>
                             <div class="text-lg border rounded-md w-auto border-[#ffffff] px-[10px]">
@@ -109,9 +121,9 @@
                     </div>
                 </div>
             </div>
-            <div class="w-[25%] px-[16px]">
+            <div class="md:w-[25%] px-[16px] pb-[25px]">
                 <div class="h-[510px] text-2xl text-white flex items-end px-[28px] py-[24px]"
-                    style="background-image: url('assets/temp2/home.jpg');">
+                    style="background-image: url('assets/temp2/card_3.jpg'); background-size: cover;">
                     <div class="flex justify-center ">
                         <div>
                             <div class="text-lg border rounded-md w-auto border-[#ffffff] px-[10px]">
@@ -126,9 +138,9 @@
                     </div>
                 </div>
             </div>
-            <div class="w-[25%] px-[16px]">
+            <div class="md:w-[25%] px-[16px] pb-[25px]">
                 <div class="h-[510px] text-2xl text-white flex items-end px-[28px] py-[24px]"
-                    style="background-image: url('assets/temp2/home.jpg');">
+                    style="background-image: url('assets/temp2/card_4.jpg'); background-size: cover;">
                     <div class="flex justify-center ">
                         <div>
                             <div class="text-lg border rounded-md w-auto border-[#ffffff] px-[10px]">
@@ -157,44 +169,43 @@
     <div class="flex flex-wrap py-[5rem] px-[5rem]">
         <div class="w-[25%] py-[16px]">
             <div class="mb-[42px]">
-                <P class="text-white">Molestias</P>
+                <P class="text-white text-2xl font-bold">Molestias</P>
                 <p class="my-[20px] text-[#b6b6b6]">
                     Perferendis provident recusandae sit suscipit, tenetur unde voluptates.
                 </p>
             </div>
             <div class="mb-[42px]">
-                <P class="text-white">Recusandae</P>
+                <P class="text-white text-2xl font-bold">Recusandae</P>
                 <p class="my-[20px] text-[#b6b6b6]">
                     Asperiores cum cumque fugit nisi obcaecati quo sapiente vel.
                 </p>
             </div>
             <div class="mb-[42px]">
-                <P class="text-white">Tenetur</P>
+                <P class="text-white text-2xl font-bold">Tenetur</P>
                 <p class="my-[20px] text-[#b6b6b6]">
                     Non numquam possimus repellat sed sint veniam. Consectetur hic laudantium.
                 </p>
             </div>
         </div>
         <div class="w-[50%] py-[16px] grid place-content-center">
-            <div class="px-[30px]">
-                <img class="h-[270px]" src="assets/temp2/home.jpg" alt="">
-            </div>
+            <img class="h-[270px]" src="assets/temp2/5.jpg" alt="">
+
         </div>
         <div class="w-[25%] py-[16px]">
             <div class="mb-[42px]">
-                <P class="text-white">Suscipit</P>
+                <P class="text-white text-2xl font-bold">Suscipit</P>
                 <p class="my-[20px] text-[#b6b6b6]">
                     Possimus provident qui quo sit tenetur vero, voluptatum.
                 </p>
             </div>
             <div class="mb-[42px]">
-                <P class="text-white">Praesentium</P>
+                <P class="text-white text-2xl font-bold">Praesentium</P>
                 <p class="my-[20px] text-[#b6b6b6]">
                     Perferendis provident recusandae sit suscipit, tenetur unde voluptates.
                 </p>
             </div>
             <div class="mb-[42px]">
-                <P class="text-white">Molestias</P>
+                <P class="text-white text-2xl font-bold">Molestias</P>
                 <p class="my-[20px] text-[#b6b6b6]">
                     Consectetur adipisicing elit est iusto, laborum molestias.
                 </p>
@@ -203,25 +214,23 @@
     </div>
     <div class="py-[5rem]">
         <div class="px-[60px]">
-            <div class="flex justify-center text-xl text-white">
-                <div class="flex justify-center">
-                    Consectetur consequuntur ducimus, iusto laboriosam
-                    necessitatibus, obcaecati perferendis porro qui repellat reprehenderit rerum. enim inventore
-                    iure minus nostrum nulla.
-                </div>
+            <div class="text-center text-2xl text-white px-[20%]">
+                Consectetur consequuntur ducimus, iusto laboriosam
+                necessitatibus, obcaecati perferendis porro qui repellat reprehenderit rerum. enim inventore
+                iure minus nostrum nulla.
             </div>
         </div>
     </div>
     <div class=" flex flex-wrap py-[5rem] ">
         <div class="w-[60%]">
-            <img class="h-[960px] px-[16px]" src="assets/temp2/home.jpg" alt="" srcset="">
+            <img class="h-[960px] px-[16px]" src="assets/temp2/6.jpg" alt="" srcset="">
         </div>
         <div class="w-[40%] h-[960px]   px-[16px] place-content-center">
             <div class="px-[60px]">
                 <div class="mb-[90px] flex flex-wrap">
-                    <i class="fa fa-user text-6xl text-[#616161] w-[30%] pr-[20px]"></i>
+                    <i class="fa fa-user text-7xl text-[#616161] w-[30%] pr-[20px]"></i>
                     <div class="w-[70%]">
-                        <p class="text-white text-1xl">
+                        <p class="text-white text-2xl">
                             Excellent <br> teamwork
                         </p>
                         <p class="text-[#616161]"> Repellendus unde exercitationem harum maiores.</p>
@@ -230,9 +239,9 @@
                 </div>
 
                 <div class="mb-[90px] flex flex-wrap">
-                    <i class="fa fa-user text-6xl text-[#616161] w-[30%] pr-[20px]"></i>
+                    <i class="fa fa-star text-7xl text-[#616161] w-[30%] pr-[20px]"></i>
                     <div class="w-[70%]">
-                        <p class="text-white text-1xl">
+                        <p class="text-white text-2xl">
                             New design <br> approach
                         </p>
                         <p class="text-[#616161]"> Possimus provident quam quasi sapiente tenetur ut veniam vero.</p>
@@ -240,9 +249,9 @@
                     </div>
                 </div>
                 <div class="mb-[90px] flex flex-wrap">
-                    <i class="fa fa-user text-6xl text-[#616161] w-[30%] pr-[20px]"></i>
+                    <i class="fa fa-car text-7xl text-[#616161] w-[30%] pr-[20px]"></i>
                     <div class="w-[70%]">
-                        <p class="text-white text-1xl">
+                        <p class="text-white text-2xl">
                             Future <br> technology
                         </p>
                         <p class="text-[#616161]"> Ea earum obcaecati quis similique voluptates.</p>
@@ -255,9 +264,9 @@
     </div>
     <div class=" py-[5rem]">
         <div class="flex flex-wrap px-[36px]">
-            <img class="h-[550px] w-[45%] px-[16px]" src="assets/temp2/home.jpg" alt="">
+            <img class="h-[550px] w-[45%] px-[16px]" src="assets/temp2/7.jpg" alt="">
             <div class="h-[550px] w-[55%] px-[32px] place-content-center">
-                <p class="text-white">Products that matches your interests</p>
+                <p class="text-white text-2xl">Products that matches your interests</p>
                 <p class="my-[25px] text-[#616161]">Dolor sit amet, consectetur adipisicing elit. Aliquid autem beatae
                     consectetur
                     cumque dolores dolorum enim inventore iure minus nostrum nulla numquam.</p>
@@ -269,25 +278,25 @@
     </div>
     <div class="flex flex-wrap py-[5rem]">
         <div class="text-center w-[33%] place-content-center px-[30px]"
-            style="background-image: url('assets/temp2/home.jpg');">
-            <p class="text-white">Main users</p>
-            <p class="my-[25px]">Lorem ipsum dolor sit amet,
+            style="background-image: url('assets/temp2/8.jpg'); background-size: cover;">
+            <p class="text-white text-2xl">Main users</p>
+            <p class="my-[25px] text-[#616161]">Lorem ipsum dolor sit amet,
                 consectetur adipisicing elit.</p>
-            <button class="text-white">See
+            <button class="text-white text-2xl">See
                 more <i class="fas fa-play-circle play-icon pl-1"></i></button>
         </div>
-        <img class="w-[33%]" src="assets/temp2/home.jpg" alt="">
+        <img class="w-[33%]" src="assets/temp2/9.jpg" alt="">
         <div class="text-center w-[33%] place-content-center px-[30px]"
-            style="background-image: url('assets/temp2/home.jpg');">
-            <p class="text-white">Production</p>
-            <p class="my-[25px]">Lorem ipsum dolor sit amet,
+            style="background-image: url('assets/temp2/13.jpg');background-size: cover;">
+            <p class="text-white text-2xl">Production</p>
+            <p class="my-[25px] text-[#616161]">Lorem ipsum dolor sit amet,
                 consectetur adipisicing elit.</p>
-            <button class="text-white">See
+            <button class="text-white text-2xl">See
                 more <i class="fas fa-play-circle play-icon pl-1"></i></button>
         </div>
-        <img class="w-[33%]" src="assets/temp2/home.jpg" alt="">
-        <img class="w-[33%]" src="assets/temp2/home.jpg" alt="">
-        <img class="w-[33%]" src="assets/temp2/home.jpg" alt="">
+        <img class="w-[33%]" src="assets/temp2/10.jpg" alt="">
+        <img class="w-[33%]" src="assets/temp2/11.jpg" alt="">
+        <img class="w-[33%]" src="assets/temp2/12.jpg" alt="">
     </div>
     <div class="py-[5rem]">
         <div class="px-[51px] flex flex-wrap">
@@ -414,22 +423,32 @@
     </div>
     <div class="py-[5rem]">
         <div class="flex flex-wrap px-[51px]">
-            <img class="h-[650px] w-[60%] pr-[18px]" src="assets/temp2/home.jpg" alt="" srcset="">
-            <div class="h-[650px] border w-[40%] pl-[18px]">
+            <img class="h-[650px] w-[60%] pr-[18px]" src="assets/temp2/14.jpg" alt="" srcset="">
+            <div class="h-[650px] border w-[40%] pl-[18px] grid place-content-center">
+                <div class="text-center">
+                    <p class="text-white 2xl">Lorem ipsum</p>
+                    <p class="text-sm text-[#616161]">Lorem ipsum dolor sit amet, consectetur adipisicing elit. At
+                        laborum, doloribus nulla, dignissimos dolores eum molestias vel architecto quidem voluptatibus
+                        eaque omnis. Quidem incidunt illum eligendi harum possimus ducimus, nihil temporibus officiis
+                        accusantium, eaque perferendis, alias quisquam modi. Animi, perferendis velit. Placeat maiores
+                        explicabo facere totam, suscipit nam quod possimus, ratione magnam veniam est vel voluptatibus
+                        rem aut nulla esse.</p>
+                </div>
+
             </div>
         </div>
     </div>
     <div class="py-[5rem] flex px-[51px] justify-between">
-        <img class="h-[108px]  w-[108px]" src="assets/temp2/home.jpg" alt="" srcset="">
+        <img class="h-[108px]  w-[108px]" src="assets/temp2/9.jpg" alt="" srcset="">
 
-        <img class="h-[108px]  w-[108px]" src="assets/temp2/home.jpg" alt="" srcset="">
-        <img class="h-[108px]  w-[108px]" src="assets/temp2/home.jpg" alt="" srcset="">
+        <img class="h-[108px]  w-[108px]" src="assets/temp2/10.jpg" alt="" srcset="">
+        <img class="h-[108px]  w-[108px]" src="assets/temp2/11.jpg" alt="" srcset="">
 
-        <img class="h-[108px]  w-[108px]" src="assets/temp2/home.jpg" alt="" srcset="">
+        <img class="h-[108px]  w-[108px]" src="assets/temp2/12.jpg" alt="" srcset="">
 
-        <img class="h-[108px]  w-[108px]" src="assets/temp2/home.jpg" alt="" srcset="">
+        <img class="h-[108px]  w-[108px]" src="assets/temp2/13.jpg" alt="" srcset="">
 
-        <img class="h-[108px]  w-[108px]" src="assets/temp2/home.jpg" alt="" srcset="">
+        <img class="h-[108px]  w-[108px]" src="assets/temp2/14.jpg" alt="" srcset="">
 
     </div>
     <footer class="py-[5rem] flex flex-wrap px-4 bg-gray-900 text-white pt-10 justify-between pb-2">
