@@ -19,8 +19,11 @@ export class Temp2Component {
     this.showMobileMenu = show
   }
   onResize1(event: any) {
-    if (window.innerWidth < 768) {
+    if (window.innerWidth < 640) {
       this.showMobileMenu = true;
+    } else {
+      this.showMobileMenu = false;
+
     }
   }
 }
