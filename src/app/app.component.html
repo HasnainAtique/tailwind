@@ -1,1 +1,497 @@
-<router-outlet></router-outlet> 
+<div>
+    <nav class="h-26 p-4 bg-[#000000] pt-6">
+        <div class="flex justify-between">
+            <div>
+                <img class="h-8 w-8 cursor-pointer" src="assets/logo.png" alt="" srcset="">
+            </div>
+            <div class="hidden sm:inline-block">
+                <ul class="flex">
+                    <li class="text-white cursor-pointer p-2 px-3 text-sm hover:text-[#cccccc]">Home </li>
+                    <li class="text-white cursor-pointer p-2 px-3 text-sm hover:text-[#cccccc]">Products </li>
+                    <li class="text-white cursor-pointer p-2 px-3 text-sm hover:text-[#cccccc]">About Us </li>
+                    <li class="text-white cursor-pointer p-2 px-3 text-sm hover:text-[#cccccc]">Price </li>
+                    <li class="text-white cursor-pointer p-2 px-3 text-sm hover:text-[#cccccc]">Contacts </li>
+                </ul>
+            </div>
+            <div class="hidden sm:inline-block text-3xl text-white">
+                <a class="cursor-pointer">&#8801;</a>
+            </div>
+            <div class="sm:hidden text-3xl">
+                <i *ngIf="showMobileMenu" class="fa fa-times text-red-500 cursor-pointer" (click)="showMenu(false)"></i>
+                <a *ngIf="!showMobileMenu" class="cursor-pointer text-white" (click)="showMenu(true)">&#8801;</a>
+            </div>
+        </div>
+        <div class="md:hidden" [hidden]="showMobileMenu ? false : true">
+            <ul>
+                <li
+                    class="text-white cursor-pointer p-2 px-3 text-sm hover:bg-[#cccccc] hover:rounded-lg hover:text-black">
+                    Home </li>
+                <li
+                    class="text-white cursor-pointer p-2 px-3 text-sm hover:bg-[#cccccc] hover:rounded-lg hover:text-black">
+                    Products </li>
+                <li
+                    class="text-white cursor-pointer p-2 px-3 text-sm hover:bg-[#cccccc] hover:rounded-lg hover:text-black">
+                    About Us </li>
+                <li
+                    class="text-white cursor-pointer p-2 px-3 text-sm hover:bg-[#cccccc] hover:rounded-lg hover:text-black">
+                    Price </li>
+                <li
+                    class="text-white cursor-pointer p-2 px-3 text-sm hover:bg-[#cccccc] hover:rounded-lg hover:text-black">
+                    Contacts </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="bg-cover pt-[6rem] md:pt-[23rem] px-6 pb-16" style="background-image: url('assets/temp2/home.jpg');">
+        <p class="text-5xl text-white">
+            Technology Company
+        </p>
+        <p class="text-sm text-[#cccccc] pt-12">
+            Adipisicing elit. Ab debitis dolorem dolorum eligendi esse eveniet exercitationem fuga,
+        </p>
+        <p class="text-sm text-[#cccccc]">
+            fugiat hic magni mollitia nemo, nesciunt nulla, quod
+        </p>
+        <p class="text-sm text-[#cccccc] pb-4">
+            recusandae sit unde ut vel.
+        </p>
+        <button
+            class="rounded-2xl py-1.5 text-sm px-3 bg-gradient-to-r from-gray-500 to-gray-100 hover:from-gray-600 hover:to-gray-200 ...">See
+            more <i class="fas fa-play-circle play-icon pl-1"></i></button>
+    </div>
+</div>
+<div class="bg-black">
+    <div class="flex flex-wrap md:py-[5rem] py-[2.5rem] md:px-[51px] px-[25px] sm:px-[0px]">
+        <div class="w-full sm:w-[50%] sm:px-[16px] md:px-[25px] pb-[25px] sm:pb-[0px]">
+            <div class="h-56 grid place-content-center text-2xl text-white hover:z-50" style="background-image: url('assets/temp2/airpods.jpg');
+            background-size: cover;">
+                Buds
+            </div>
+
+        </div>
+        <div class="w-full sm:w-[50%] sm:px-[16px] md:px-[25px] sm:pb-[0px]">
+            <div class="h-56  grid place-content-center text-2xl text-white"
+                style="background-image: url('assets/temp2/smartphones.jpg'); background-size: cover;">
+                Smartphones
+            </div>
+        </div>
+    </div>
+    <div class="md:py-[5rem] py-[2.5rem] flex justify-center md:px-[5rem] px-[25px]">
+        <div class="flex flex-wrap justify-between max-w-[1140px]">
+            <div class="md:w-[33%] pb-[25px]">
+                <i class="fas fa-desktop md:text-8xl text-6xl text-[#616161] mb-[18px]"></i>
+                <p class="text-2xl mb-[18px] text-white">Technologies</p>
+                <p class="text-md text-white mt-2 text-wrap">Id in laborum molestias quos rem repellat sint vero.</p>
+            </div>
+            <div class="md:w-[33%] pb-[25px]">
+                <i class="fas fa-link md:text-8xl text-6xl text-[#616161] mb-[18px]"></i>
+                <p class="text-2xl mb-[18px] text-white">Future</p>
+                <p class="text-md text-white mt-2">Itaque pariatur quae quibusdam reprehenderit vero. Dolor eveniet id.
+                </p>
+            </div>
+            <div class="md:w-[33%] sm:pb-[25px]">
+                <i class="fas fa-cogs md:text-8xl text-6xl text-[#616161] mb-[18px]"></i>
+                <p class="text-2xl mb-[18px] text-white">Gadgets</p>
+                <p class="text-md text-white mt-2">Culpa distinctio ex fuga libero minima pariatur porro quas qui.</p>
+            </div>
+        </div>
+    </div>
+    <div class="md:py-[5rem] py-[2.5rem]">
+        <div class="flex flex-wrap">
+            <div class="sm:w-[50%] md:w-[25%] sm:px-[16px] pb-[25px]">
+                <div class="h-[510px] text-2xl text-white flex items-end px-[28px] py-[24px]"
+                    style="background-image: url('assets/temp2/card_1.jpg'); background-size: cover;">
+                    <div class="flex justify-center ">
+                        <div>
+                            <div class="text-lg border rounded-md w-auto border-[#ffffff] px-[10px]">
+                                <p>02 MARCH 2030
+                                </p>
+                            </div>
+                            <p class="mt-[20px] text-lg">Repudiandae tempora veritatis voluptas voluptatem.
+                            </p>
+                            <p class="mt-[28px] text-[#b6b6b6] text-sm">by Sara Lewis
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="sm:w-[50%] md:w-[25%] sm:px-[16px] pb-[25px]">
+                <div class="h-[510px] text-2xl text-white flex items-end px-[28px] py-[24px]"
+                    style="background-image: url('assets/temp2/card_2.jpg'); background-size: cover;">
+                    <div class="flex justify-center ">
+                        <div>
+                            <div class="text-lg border rounded-md w-auto border-[#ffffff] px-[10px]">
+                                <p>02 MARCH 2030
+                                </p>
+                            </div>
+                            <p class="mt-[20px] text-lg">Repudiandae tempora veritatis voluptas voluptatem.
+                            </p>
+                            <p class="mt-[28px] text-[#b6b6b6] text-sm">by Sara Lewis
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="sm:w-[50%] md:w-[25%] sm:px-[16px] pb-[25px]">
+                <div class="h-[510px] text-2xl text-white flex items-end px-[28px] py-[24px]"
+                    style="background-image: url('assets/temp2/card_3.jpg'); background-size: cover;">
+                    <div class="flex justify-center ">
+                        <div>
+                            <div class="text-lg border rounded-md w-auto border-[#ffffff] px-[10px]">
+                                <p>02 MARCH 2030
+                                </p>
+                            </div>
+                            <p class="mt-[20px] text-lg">Repudiandae tempora veritatis voluptas voluptatem.
+                            </p>
+                            <p class="mt-[28px] text-[#b6b6b6] text-sm">by Sara Lewis
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="sm:w-[50%] md:w-[25%] sm:px-[16px] sm:pb-[25px]">
+                <div class="h-[510px] text-2xl text-white flex items-end px-[28px] py-[24px]"
+                    style="background-image: url('assets/temp2/card_4.jpg'); background-size: cover;">
+                    <div class="flex justify-center ">
+                        <div>
+                            <div class="text-lg border rounded-md w-auto border-[#ffffff] px-[10px]">
+                                <p>02 MARCH 2030
+                                </p>
+                            </div>
+                            <p class="mt-[20px] text-lg">Repudiandae tempora veritatis voluptas voluptatem.
+                            </p>
+                            <p class="mt-[28px] text-[#b6b6b6] text-sm">by Sara Lewis
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="md:py-[5rem] py-[2.5rem] px-[25px] sm:px-[0px]">
+        <div class="text-center mb-[25px]">
+            <p class="text-white text-4xl">Major technology <br>market leaders</p>
+        </div>
+        <div class="text-center">
+            <p class="text-white text-xl">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias consequatur
+                cumque<br>excepturi fugit nulla odio perferendis quae recusandae soluta tempore.</p>
+        </div>
+    </div>
+    <div class="flex flex-wrap md:py-[5rem] py-[2.5rem] md:px-[5rem] px-[25px]">
+        <div class="md:w-[25%] py-[16px]">
+            <div class="mb-[42px]">
+                <P class="text-white text-2xl font-bold">Molestias</P>
+                <p class="my-[20px] text-[#b6b6b6]">
+                    Perferendis provident recusandae sit suscipit, tenetur unde voluptates.
+                </p>
+            </div>
+            <div class="mb-[42px]">
+                <P class="text-white text-2xl font-bold">Recusandae</P>
+                <p class="my-[20px] text-[#b6b6b6]">
+                    Asperiores cum cumque fugit nisi obcaecati quo sapiente vel.
+                </p>
+            </div>
+            <div class="mb-[42px]">
+                <P class="text-white text-2xl font-bold">Tenetur</P>
+                <p class="my-[20px] text-[#b6b6b6]">
+                    Non numquam possimus repellat sed sint veniam. Consectetur hic laudantium.
+                </p>
+            </div>
+        </div>
+        <div class="md:w-[50%] py-[16px] grid place-content-center">
+            <img class="md:h-[270px]" src="assets/temp2/5.jpg" alt="">
+        </div>
+        <div class="md:w-[25%] sm:py-[16px]">
+            <div class="mb-[42px]">
+                <P class="text-white text-2xl font-bold">Suscipit</P>
+                <p class="my-[20px] text-[#b6b6b6]">
+                    Possimus provident qui quo sit tenetur vero, voluptatum.
+                </p>
+            </div>
+            <div class="mb-[42px]">
+                <P class="text-white text-2xl font-bold">Praesentium</P>
+                <p class="my-[20px] text-[#b6b6b6]">
+                    Perferendis provident recusandae sit suscipit, tenetur unde voluptates.
+                </p>
+            </div>
+            <div class="sm:mb-[42px]">
+                <P class="text-white text-2xl font-bold">Molestias</P>
+                <p class="my-[20px] text-[#b6b6b6]">
+                    Consectetur adipisicing elit est iusto, laborum molestias.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="md:py-[5rem] py-[2.5rem]">
+        <div class="md:px-[60px] px-[25px]">
+            <div class="text-center text-2xl text-white md:px-[20%]">
+                Consectetur consequuntur ducimus, iusto laboriosam
+                necessitatibus, obcaecati perferendis porro qui repellat reprehenderit rerum. enim inventore
+                iure minus nostrum nulla.
+            </div>
+        </div>
+    </div>
+    <div class=" flex flex-wrap md:py-[5rem] py-[2.5rem] ">
+        <div class="md:w-[60%]">
+            <img class="md:h-[960px] md:px-[16px] pb-[2.5rem] md:pb-[0px]" src="assets/temp2/6.jpg" alt="" srcset="">
+        </div>
+        <div class="md:w-[40%] md:h-[960px] md:px-[16px] px-[25px] md:place-content-center">
+            <div class="mb-[90px] flex flex-wrap">
+                <i class="fa fa-user sm:text-8xl text-6xl text-[#616161] w-[30%] md:pr-[20px]"></i>
+                <div class="w-[70%]">
+                    <p class="text-white text-2xl">
+                        Excellent <br> teamwork
+                    </p>
+                    <p class="text-[#616161]"> Repellendus unde exercitationem harum maiores.</p>
+
+                </div>
+            </div>
+
+            <div class="mb-[90px] flex flex-wrap">
+                <i class="fa fa-star sm:text-8xl text-6xl text-[#616161] w-[30%] md:pr-[20px]"></i>
+                <div class="w-[70%]">
+                    <p class="text-white text-2xl">
+                        New design <br> approach
+                    </p>
+                    <p class="text-[#616161]"> Possimus provident quam quasi sapiente tenetur ut veniam vero.</p>
+
+                </div>
+            </div>
+            <div class="md:mb-[90px] flex flex-wrap">
+                <i class="fa fa-car sm:text-8xl text-6xl text-[#616161] w-[30%] md:pr-[20px]"></i>
+                <div class="w-[70%]">
+                    <p class="text-white text-2xl">
+                        Future <br> technology
+                    </p>
+                    <p class="text-[#616161]"> Ea earum obcaecati quis similique voluptates.</p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class=" md:py-[5rem] py-[2.5rem]">
+        <div class="flex flex-wrap md:px-[36px]">
+            <img class="md:h-[550px] md:w-[45%] md:px-[16px] pb-[25px] md:pb-[0px]" src="assets/temp2/7.jpg" alt="">
+            <div class="md:h-[550px] md:w-[55%] md:px-[32px] place-content-center px-[25px]">
+                <p class="text-white text-2xl">Products that matches your interests</p>
+                <p class="my-[25px] text-[#616161]">Dolor sit amet, consectetur adipisicing elit. Aliquid autem beatae
+                    consectetur
+                    cumque dolores dolorum enim inventore iure minus nostrum nulla numquam.</p>
+                <button
+                    class="rounded-2xl py-1.5 text-sm px-3 bg-gradient-to-r from-gray-500 to-gray-100 hover:from-gray-600 hover:to-gray-200 ...">See
+                    more <i class="fas fa-play-circle play-icon pl-1"></i></button>
+            </div>
+        </div>
+    </div>
+    <div class="flex flex-wrap md:py-[5rem] py-[2.5rem]">
+        <div class="text-center h-[246px] sm:w-[50%] md:w-[33%] place-content-center px-[30px]"
+            style="background-image: url('assets/temp2/8.jpg'); background-size: cover;">
+            <p class="text-white text-2xl">Main users</p>
+            <p class="my-[25px] text-[#616161]">Lorem ipsum dolor sit amet,
+                consectetur adipisicing elit.</p>
+            <button class="text-white text-2xl">See
+                more <i class="fas fa-play-circle play-icon pl-1"></i></button>
+        </div>
+        <img class="sm:w-[50%] md:w-[33%] h-[246px]" src="assets/temp2/9.jpg" alt="">
+        <div class="text-center h-[246px] sm:w-[50%] md:w-[33%] place-content-center px-[30px]"
+            style="background-image: url('assets/temp2/13.jpg'); background-size: cover;">
+            <p class="text-white text-2xl">Production</p>
+            <p class="my-[25px] text-[#616161]">Lorem ipsum dolor sit amet,
+                consectetur adipisicing elit.</p>
+            <button class="text-white text-2xl">See
+                more <i class="fas fa-play-circle play-icon pl-1"></i></button>
+        </div>
+        <img class="sm:w-[50%] h-[246px] md:w-[33%]" src="assets/temp2/10.jpg" alt="">
+        <img class="sm:w-[50%] md:w-[33%] h-[246px]" src="assets/temp2/9.jpg" alt="">
+        <img class="sm:w-[50%] h-[246px] md:w-[33%]" src="assets/temp2/12.jpg" alt="">
+    </div>
+    <div class="md:py-[5rem] py-[2.5rem]">
+        <div class="md:px-[51px] px-[25px] flex flex-wrap">
+            <div class="w-full pb-[25px] sm:w-[50%] md:w-[33%]">
+                <div class=" border rounded-lg py-[60px] px-[30px] sm:mx-[20px]">
+                    <p class="text-[#616161]">EACH MONTH</p>
+                    <p class="text-white"><span class="text-6xl">50</span> <span>$</span></p>
+                    <p class="mb-[36px] text-white text-2xl">Initial project</p>
+                    <ul class="mt-[40px]">
+                        <li class="text-[#616161] text-sm my-[10px]">Adipisicing elit</li>
+                        <li class="text-[#616161] text-sm my-[10px]">Consectetur</li>
+                        <li class="text-[#616161] text-sm my-[10px]">Sapiente sint</li>
+                        <li class="text-[#616161] text-sm my-[10px]">Quod recusandae</li>
+                    </ul>
+                    <button
+                        class="my-[10px] rounded-2xl py-1.5 text-sm px-3 bg-gradient-to-r from-gray-500 to-gray-100 hover:from-gray-600 hover:to-gray-200 ...">Buy
+                        now <i class="fas fa-play-circle play-icon pl-1"></i></button>
+                </div>
+            </div>
+            <div class="w-full pb-[25px] sm:w-[50%] md:w-[33%]">
+                <div
+                    class="bg-gradient-to-r from-gray-500 to-gray-100  border rounded-lg py-[60px] px-[30px] sm:mx-[20px]">
+                    <p class="text-[#616161]">EACH MONTH</p>
+                    <p class="text-white"><span class="text-6xl">70</span> <span>$</span></p>
+                    <p class="mb-[36px] text-white text-2xl">Basic project</p>
+                    <ul class="mt-[40px]">
+                        <li class="text-[#616161] text-sm my-[10px]">Adipisicing elit</li>
+                        <li class="text-[#616161] text-sm my-[10px]">Consectetur</li>
+                        <li class="text-[#616161] text-sm my-[10px]">Sapiente sint</li>
+                        <li class="text-[#616161] text-sm my-[10px]">Quod recusandae</li>
+                    </ul>
+                    <button
+                        class="my-[10px] rounded-2xl py-1.5 text-sm px-3 bg-gradient-to-r from-gray-500 to-gray-100 hover:from-gray-600 hover:to-gray-200 ...">Buy
+                        now <i class="fas fa-play-circle play-icon pl-1"></i></button>
+                </div>
+            </div>
+            <div class="w-full pb-[25px] sm:w-[50%] md:w-[33%] sm:mx-auto">
+                <div class=" border rounded-lg py-[60px] px-[30px] sm:mx-[20px]">
+                    <p class="text-[#616161]">EACH MONTH</p>
+                    <p class="text-white"><span class="text-6xl">90</span> <span>$</span></p>
+                    <p class="mb-[36px] text-white text-2xl">Full project</p>
+                    <ul class="mt-[40px]">
+                        <li class="text-[#616161] text-sm my-[10px]">Adipisicing elit</li>
+                        <li class="text-[#616161] text-sm my-[10px]">Consectetur</li>
+                        <li class="text-[#616161] text-sm my-[10px]">Sapiente sint</li>
+                        <li class="text-[#616161] text-sm my-[10px]">Quod recusandae</li>
+                    </ul>
+                    <button
+                        class="my-[10px] rounded-2xl py-1.5 text-sm px-3 bg-gradient-to-r from-gray-500 to-gray-100 hover:from-gray-600 hover:to-gray-200 ...">Buy
+                        now <i class="fas fa-play-circle play-icon pl-1"></i></button>
+                </div>
+            </div>
+        </div>
+        <div class="md:py-[5rem] py-[2.5rem]">
+            <div class="flex flex-wrap md:px-[51px] px-[25px]">
+                <div class="pb-25px md:w-[50%] md:px-[20px] md:pb-[0px] pb-[25px]">
+                    <p class="text-xl mb-[20px] text-white">Write to our company!</p>
+                    <p class="text-[#616161]">Accusantium aliquam aperiam architecto aut autem, culpa doloribus esse
+                        illum
+                        ipsam ipsum iste iure
+                        nisi, nulla perspiciatis rerum saepe sequi temporibus unde consectetur adipisicing elit. Ab
+                        consectetur eaque facilis hic id.</p>
+                    <div class="sm:pt-[12px] sm:flex sm:justify-between">
+                        <div class="pr-3">
+                            <p class="text-xl text-white mt-[6px] mb-[20px]">Delectus</p>
+                            <p class="text-sm text-[#616161]">Quibusdam reiciendis repudiandae ut vitae lorem ipsum.</p>
+                        </div>
+                        <div class="pr-3">
+                            <p class="text-xl text-white mt-[6px] mb-[20px]">Reiciendis</p>
+                            <p class="text-sm text-[#616161]">Suscipit tenetur veniam voluptates distinctio, obcaecati.
+                            </p>
+                        </div>
+                        <div class="pr-3">
+                            <p class="text-xl text-white mt-[6px] mb-[20px]">Quibusdam</p>
+                            <p class="text-sm text-[#616161]">Hic impedit iure maxime molestias mollitia odit porro.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-[50%] flex flex-wrap">
+                    <div class="w-full md:w-[50%] md:px-2 pt-[25px] md:pt-[0px]">
+                        <div class="relative z-0">
+                            <input type="text" id="small_standard"
+                                class="block w-full px-0 py-2 text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                                placeholder=" " />
+                            <label for="small_standard"
+                                class="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto">
+                                Your name</label>
+                        </div>
+                    </div>
+                    <div class="w-full md:w-[50%] md:px-2 pt-[25px] md:pt-[0px]">
+                        <div class="relative z-0">
+                            <input type="text" id="small_standard"
+                                class="block w-full px-0 py-2 text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                                placeholder=" " />
+                            <label for="small_standard"
+                                class="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto">
+                                Your e-mail</label>
+                        </div>
+                    </div>
+                    <div class="w-full md:px-2 pt-[25px] md:pt-[0px]">
+                        <div class="relative z-0">
+                            <input type="text" id="small_standard"
+                                class="block w-full px-0 py-2 text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                                placeholder=" " />
+                            <label for="small_standard"
+                                class="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto">
+                                Message</label>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-end mt-[40%] md:mt-[138%]">
+                            <button
+                                class="rounded-2xl py-1.5 text-sm px-3 bg-gradient-to-r from-gray-500 to-gray-100 hover:from-gray-600 hover:to-gray-200 ...">
+                                Submit
+                                <i class="fas fa-play-circle play-icon pl-1"></i>
+                            </button>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="md:py-[5rem] py-[2.5rem]">
+        <div class="flex flex-wrap md:px-[51px] px-[25px]">
+            <img class="sm:h-[650px] pb-[25px] sm:pb-[0px] sm:w-[60%] sm:pr-[18px]" src="assets/temp2/14.jpg" alt=""
+                srcset="">
+            <div class="sm:h-[650px] border sm:w-[40%] sm:pl-[18px] px-[6px] sm:px-[0px] grid place-content-center">
+                <div class="text-center ">
+                    <p class="text-white 2xl">Lorem ipsum</p>
+                    <p class="text-sm text-[#616161]">Lorem ipsum dolor sit amet, consectetur adipisicing elit. At
+                        laborum, doloribus nulla, dignissimos dolores eum molestias vel architecto quidem voluptatibus
+                        eaque omnis. Quidem incidunt illum eligendi harum possimus ducimus, nihil temporibus officiis
+                        accusantium, eaque perferendis, alias quisquam modi. Animi, perferendis velit. Placeat maiores
+                        explicabo facere totam, suscipit nam quod possimus, ratione magnam veniam est vel voluptatibus
+                        rem aut nulla esse.</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="flex flex-wrap sm:px-[51px] px-[25px] justify-between md:py-[5rem] py-[2.5rem]">
+        <img class="h-24 mb-4 w-[50%] sm:w-[33.33%] md:w-[16.66%] pr-4" src="assets/temp2/9.jpg" alt="">
+        <img class="h-24 mb-4 w-[50%] sm:w-[33.33%]  md:w-[16.66%] md:pr-4 sm:pr-4" src="assets/temp2/10.jpg" alt="">
+        <img class="h-24 mb-4 w-[50%] sm:w-[33.33%] md:w-[16.66%] pr-4 sm:pr-0 md:pr-4" src="assets/temp2/11.jpg"
+            alt="">
+        <img class="h-24 mb-4 w-[50%] sm:w-[33.33%]  md:w-[16.66%] sm:pr-4 md:pr-4" src="assets/temp2/12.jpg" alt="">
+        <img class="h-24 mb-4 w-[50%] sm:w-[33.33%]  md:w-[16.66%] pr-4" src="assets/temp2/13.jpg" alt="">
+        <img class="h-24 mb-4 w-[50%] sm:w-[33.33%]  md:w-[16.66%] md:pr-0" src="assets/temp2/14.jpg" alt="">
+    </div>
+
+
+
+    <footer class="md:py-[5rem] py-[2.5rem] flex flex-wrap px-4 bg-gray-900 text-white pt-10 justify-between pb-2">
+        <div class="w-full sm:w-[50%] md:w-[25%] space-y-[18px] pb-[25px] md:pb-[0px]">
+            <img class="w-11 h-11" src="assets/logo.png" alt="" srcset="">
+            <div class="md:text-base text-sm">Ab debitis dolorem dolorum</div>
+            <div class="md:text-base text-sm">&#64; COPYRIGHT 2030 MOBIRISE</div>
+            <div class="md:text-base text-sm">ALL RIGHTS RESERVED</div>
+        </div>
+        <div class="w-full sm:w-[50%] md:w-[25%] space-y-[18px] pb-[25px] md:pb-[0px]">
+            <p class="text-white mt-2 text-3xl">Contacts</p>
+            <ul class="space-y-[18px]">
+                <li class="md:text-base text-sm">Weisgasse 403 87274 Herzogenrath</li>
+                <li class="md:text-base text-sm">98 7654 321 120</li>
+                <li class="md:text-base text-sm">mobi&#64;rise.com</li>
+            </ul>
+        </div>
+        <div class="w-full sm:w-[50%] md:w-[25%] space-y-[18px] pb-[25px] md:pb-[0px]">
+            <p class="text-3xl text-white mt-2">Social</p>
+            <ul class="space-y-[18px]">
+                <li class="md:text-base text-sm">TWITTER</li>
+                <li class="md:text-base text-sm">FACEBOOK</li>
+                <li class="md:text-base text-sm">INSTAGRAM</li>
+                <li class="md:text-base text-sm">Become an affiliate</li>
+                <li class="md:text-base text-sm">LINKEDIN</li>
+            </ul>
+        </div>
+        <div class="w-full sm:w-[50%] md:w-[25%] space-y-[18px] pb-[25px] md:pb-[0px]">
+            <p class="text-3xl text-white mt-2">Learn about us</p>
+            <ul>
+                <li class="md:text-base text-sm">Reprehenderit vero voluptas.</li>
+            </ul>
+            <div>
+                <button
+                    class="mt-[26px] rounded-2xl py-1.5 text-sm px-3 bg-gradient-to-r from-gray-500 to-gray-100 hover:from-gray-600 hover:to-gray-200 ...">See
+                    more <i class="fas fa-play-circle play-icon pl-1"></i></button>
+            </div>
+        </div>
+    </footer>
+</div>
